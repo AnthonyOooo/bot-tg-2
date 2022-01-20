@@ -1,2 +1,2 @@
-botkey = '5080018118:AAEC5ZKaj4U4QC_KPd6ELAZyKFXQeh1THCw'
+botkey = 
 admin = 579231151
