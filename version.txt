@@ -1,0 +1,5 @@
+Aiogram - 2.18
+pip install -U aiogram
+
+Python - 3.8.10
+
