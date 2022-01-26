@@ -12,8 +12,8 @@ manager = types.ReplyKeyboardMarkup(resize_keyboard=True)
 pack = types.ReplyKeyboardMarkup(resize_keyboard=True)
 pay = types.ReplyKeyboardMarkup(resize_keyboard=True)
 done = types.ReplyKeyboardMarkup(resize_keyboard=True)
-
-
+ref = types.ReplyKeyboardMarkup(resize_keyboard=True)
+other = types.ReplyKeyboardMarkup(resize_keyboard=True)
 
 
  # СОЗДАЕМ ВООБЩЕ ОСНОВУ ДЛЯ КНОПОК
@@ -22,28 +22,45 @@ online = types.KeyboardButton("Ꮶᴧиᴇнᴛы ᴏнᴧᴀйн📲")#+++
 payment= types.KeyboardButton("Ꮻᴨᴧᴀᴛᴀ💸") #---          
 price = types.KeyboardButton("Пᴩᴀйᴄ-ᴧиᴄᴛ📃")#---
 peviews = types.KeyboardButton("Ꮻᴛɜыʙы и Ꮯᴛᴀᴛиᴄᴛиᴋᴀ🕵️") #+++
-razrab = types.KeyboardButton("Ꮯʙяɜᴀᴛьᴄя ᴄ ʍᴇнᴇджᴇᴩᴏʍ дᴧя ᴧичнᴏй ᴋᴏнᴄуᴧьᴛᴀции📈")
+razrab = types.KeyboardButton("Ꮯʙяɜᴀᴛьᴄя ᴄ ʍᴇнᴇджᴇᴩᴏʍ📈")
+proch = types.KeyboardButton("Дᴩуᴦᴏᴇ📚")
 static = types.KeyboardButton("Адʍинᴄᴋиᴇ ᴋᴏнɸиᴦуᴩᴀции👩‍💻")
 news = types.KeyboardButton("Измени новости🏪")
-newss = types.KeyboardButton("Нᴏʙᴏᴄᴛи🏪") #+++ 
+newss = types.KeyboardButton("Ꮋᴏʙᴏᴄᴛи🏪") #+++ 
 chatonline = types.KeyboardButton("Ꭹᴄᴛᴀнᴏʙиᴛь ᴄᴏᴇдинᴇниᴇ📲")
+dryg = types.KeyboardButton("Пᴏᴧучиᴛь ᴄᴄыᴧᴋу💵")
+vash = types.KeyboardButton("Пᴏᴄʍᴏᴛᴩᴇᴛь ᴩᴇɸᴇᴩᴀᴧᴏʙ🙋‍")
+ask = types.KeyboardButton("Назад🔹")
 
 
 
 
 
-start.add(peviews, online, price, payment, newss) #ДОБАВЛЯЕМ ИХ В БОТА\
-start.add(razrab)
+
+start.add(peviews, online, price, payment, newss) #ДОБАВЛЯЕМ ИХ В БОТА
+start.add(razrab, proch)
 admin.add(static,news)
+admin.add(ask)
 keys.add(peviews, online, price, payment, newss)
-keys.add(razrab)
+keys.add(razrab, proch)
 menu.add(peviews, online, price, payment, newss)
-menu.add(razrab)
+menu.add(razrab, proch)
 connect.add(chatonline)
+connect.add(ask)
 manager.add(razrab)
+manager.add(ask)
 pack.add(price)
+pack.add(ask)
 pay.add(payment)
+pay.add(ask)
 done.add(peviews)
+done.add(ask)
+ref.add(dryg, vash)
+ref.add(ask)
+other.add(chatonline)
+other.add(dryg, vash)
+other.add(ask)
+
 
 
 stats = InlineKeyboardMarkup()    # СОЗДАЁМ ОСНОВУ ДЛЯ ИНЛАЙН КНОПКИ
@@ -103,14 +120,21 @@ static.add(InlineKeyboardButton(f'Назад🔙', callback_data = 'canc')) # С
 
 
 
+
+
 ############################################################################ЧАТТТ ОНЛАЙН#######################################################
 
 
 
 
 
+######################################################################ДРУГОЕ####################################################################
 
-
+proch = InlineKeyboardMarkup()    # СОЗДАЁМ ОСНОВУ ДЛЯ ИНЛАЙН КНОПКИ
+proch.add(InlineKeyboardButton(f'Получить ссылку💵', callback_data = 'adminone')) # СОЗДАЁМ КНОПКУ И КАЛБЭК К НЕЙ
+proch.add(InlineKeyboardButton(f'Посмотреть рефералов🙋‍', callback_data = 'admintwo')) # СОЗДАЁМ КНОПКУ И КАЛБЭК К НЕЙ
+proch.add(InlineKeyboardButton(f'Другое📚', callback_data = 'admintree')) # СОЗДАЁМ КНОПКУ И КАЛБЭК К НЕЙ
+proch.add(InlineKeyboardButton(f'Назад🔙', callback_data = 'canc')) # СОЗДАЁМ КНОПКУ И КАЛБЭК К НЕЙ
 
 
 
