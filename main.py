@@ -266,12 +266,13 @@ async def get_message(message: types.Message):
     if message.text == "Пᴏᴧучиᴛь ᴄᴄыᴧᴋу💵":
         
         link = await get_start_link(str(message.from_user.username), encode=True)
-        await bot.send_message(message.chat.id, text = f"*Ваша ссылка: {link} \n\nДля выхода команда: /menu 📴*", reply_markup=keyboard.dryg, parse_mode='Markdown')
+        await bot.send_message(message.chat.id, text = f"*Ваша ссылка: {link} \n\nДля выхода команда: /menu 📴*", reply_markup=keyboard.dryg, parse_mode='Markdown', disable_web_page_preview=1)
 
 
 
     if message.text == "Пᴏᴄʍᴏᴛᴩᴇᴛь ᴩᴇɸᴇᴩᴀᴧᴏʙ🙋‍":
-        await bot.send_message(message.chat.id, text = f"*___Данная система находится в тесте, только менеджер может посмотреть количество ваших рефералов🙋‍\n\n___Но вы можете посмотреть ВАШЕГО реферала, при команде (/start)*", reply_markup=keyboard.vash, parse_mode='Markdown')
+        
+        reference = cursor.execute('SELECT * FROM users WHERE refer = message.from_user.id;').fetchone()
 
     if message.text == "Назад🔹":
         await bot.send_message(message.chat.id, text= f"*Ты вернулся в главное меню👍\n\nдля помощи жми: /bothelp*", reply_markup=keyboard.start, parse_mode='Markdown')
@@ -340,6 +341,8 @@ async def get_message(message: types.Message):
         await bot.send_message(message.chat.id, text = f"*Серверу не удалось установить соединение...*", reply_markup=keyboard.connect, parse_mode='Markdown')
         await asyncio.sleep(1)
         await bot.send_message(message.chat.id, text = f"*Повторите попытку или вернитесь назад\n/menu*", reply_markup=keyboard.connect, parse_mode='Markdown')
+
+
 
     
 
@@ -494,7 +497,7 @@ async def cancl(callback: types.Message):
 
 @dp.callback_query_handler(text_contains='can') # МЫ ПРОПИСЫВАЛИ В КНОПКАХ КАЛЛБЭК "cancle" ЗНАЧИТ И ТУТ МЫ ЛОВИМ "cancle"
 async def can(call: types.CallbackQuery):
-    await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text= f"*Ты вернулся в главное меню. \n\n\nЖми: /keys*", parse_mode='Markdown')
+    await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,text= f"*Ты вернулся в главное меню. \n\n\nЖми: /keys*", parse_mode='Markdown')
        
 
     
@@ -511,7 +514,7 @@ async def can(call: types.CallbackQuery):
 
 @dp.callback_query_handler(text_contains='Jove') # МЫ ПРОПИСЫВАЛИ В КНОПКАХ КАЛЛБЭК "JOIN" ЗНАЧИТ И ТУТ МЫ ЛОВИМ "JOIN"
 async def Jove(callback: types.CallbackQuery):
-    await callback.message.answer('https://qiwi.com/payment/form/99')
+    await callback.message.answer(text = f"📃 Категория:  Авито услуги (100 объявлений, с кураторством 30 дней)\n\n💰 Цена: 15000₽\n📃 Описание: Мы размещаем объявления в вашей нише в течении 30 дней с полным анализом ниши, и подборкой стратегии размещения.\n\nС вами свяжется менеджер после покупки, после оплаты сделайте скриншот, для ускорения проверки, пришлите его менеджеру @tvoidrygim\n📦 Кол-во: 1 шт.\n➖➖➖➖➖➖➖➖➖➖➖➖\n💡 Заказ #4189150\n🕐 Итоговая сумма: 15000 ₽  (Личная скидка 0 %)\n➖➖➖➖➖➖➖➖➖➖➖➖\n☎️ Кошелек для оплаты: +375298348252\n💰 Сумма: 15000 ₽\n💭 Комментарий: 4189150\nВАЖНО: Комментарий и сумма должны быть 1в1\n➖➖➖➖➖➖➖➖➖➖➖➖\n⏰ Время на оплату: 15 минут",reply_markup=keyboard.connect, parse_mode='Markdown')
     await callback.answer()
     
        
@@ -541,7 +544,7 @@ async def canceel(callback: types.CallbackQuery):
 
 @dp.callback_query_handler(text_contains='content') # МЫ ПРОПИСЫВАЛИ В КНОПКАХ КАЛЛБЭК "JOIN" ЗНАЧИТ И ТУТ МЫ ЛОВИМ "JOIN"
 async def content(callback: types.CallbackQuery):
-    await callback.message.answer('https://t.me/tvoidrygim')
+    await callback.message.answer(text = f'*По всем вопросам - @tvoidrygim*', parse_mode='Markdown', disable_web_page_preview=1)
     await callback.answer()
     
        
@@ -552,14 +555,14 @@ async def content(callback: types.CallbackQuery):
 
 @dp.callback_query_handler(text_contains='audit') # МЫ ПРОПИСЫВАЛИ В КНОПКАХ КАЛЛБЭК "cancle" ЗНАЧИТ И ТУТ МЫ ЛОВИМ "cancle"
 async def audit(callback: types.CallbackQuery):
-    await callback.message.answer('https://t.me/tvoidrygim')
+    await callback.message.answer(text = f'*По всем вопросам - @tvoidrygim*', parse_mode='Markdown', disable_web_page_preview=1)
     await callback.answer()    
 
 
 
 @dp.callback_query_handler(text_contains='podder') # МЫ ПРОПИСЫВАЛИ В КНОПКАХ КАЛЛБЭК "cancle" ЗНАЧИТ И ТУТ МЫ ЛОВИМ "cancle"
 async def podder(callback: types.CallbackQuery):
-    await callback.message.answer('https://t.me/tvoidrygim')
+    await callback.message.answer(text = f'*По всем вопросам - @tvoidrygim*', parse_mode='Markdown', disable_web_page_preview=1)
     await callback.answer()
 
 
@@ -590,11 +593,12 @@ async def pricetree(callback: types.CallbackQuery):
 
 @dp.callback_query_handler(text_contains='adminone') # МЫ ПРОПИСЫВАЛИ В КНОПКАХ КАЛЛБЭК "JOIN" ЗНАЧИТ И ТУТ МЫ ЛОВИМ "JOIN"
 async def adminone(call: types.CallbackQuery):
-    if call.message.chat.id == config.admin:
+     if call.message.chat.id == config.admin:
         d = sum(1 for line in open('user.txt'))
-        await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=f"*Вот статистика, Император, {message.from_user.first_name}: \n*{d}* человек*", parse_mode='Markdown')
-    else:
-        await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text = "*У тебя нет админки, увы...😪*", parse_mode='Markdown')
+        await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=f'Вот статистика бота: *{d}* человек', parse_mode='Markdown')
+    
+        
+    
 
 
 @dp.callback_query_handler(text_contains='admintwo') # МЫ ПРОПИСЫВАЛИ В КНОПКАХ КАЛЛБЭК "JOIN" ЗНАЧИТ И ТУТ МЫ ЛОВИМ "JOIN"

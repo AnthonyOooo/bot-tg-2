@@ -96,9 +96,9 @@ razrab.add(InlineKeyboardButton(f'Назад 🔙', callback_data = 'canc')) # �
 
 
 price = InlineKeyboardMarkup()    # СОЗДАЁМ ОСНОВУ ДЛЯ ИНЛАЙН КНОПКИ
-price.add(InlineKeyboardButton(f'Базовый план📑', callback_data = 'priceone')) # СОЗДАЁМ КНОПКУ И КАЛБЭК К НЕЙ
-price.add(InlineKeyboardButton(f'План "Премиум"📔', callback_data = 'pricetwo')) # СОЗДАЁМ КНОПКУ И КАЛБЭК К НЕЙ
-price.add(InlineKeyboardButton(f'Бизнес-план📚', callback_data = 'pricetree')) # СОЗДАЁМ КНОПКУ И КАЛБЭК К НЕЙ
+price.add(InlineKeyboardButton(f'Авито продвижение📑', callback_data = 'priceone')) # СОЗДАЁМ КНОПКУ И КАЛБЭК К НЕЙ
+price.add(InlineKeyboardButton(f'Парсинг услуги📔', callback_data = 'pricetwo')) # СОЗДАЁМ КНОПКУ И КАЛБЭК К НЕЙ
+price.add(InlineKeyboardButton(f'Телеграм бот для вашего бизнеса📚', callback_data = 'pricetree')) # СОЗДАЁМ КНОПКУ И КАЛБЭК К НЕЙ
 price.add(InlineKeyboardButton(f'Назад 🔙', callback_data = 'canc')) # СОЗДАЁМ КНОПКУ И КАЛБЭК К НЕЙ
 
 
@@ -130,11 +130,7 @@ static.add(InlineKeyboardButton(f'Назад🔙', callback_data = 'canc')) # С
 
 ######################################################################ДРУГОЕ####################################################################
 
-proch = InlineKeyboardMarkup()    # СОЗДАЁМ ОСНОВУ ДЛЯ ИНЛАЙН КНОПКИ
-proch.add(InlineKeyboardButton(f'Получить ссылку💵', callback_data = 'adminone')) # СОЗДАЁМ КНОПКУ И КАЛБЭК К НЕЙ
-proch.add(InlineKeyboardButton(f'Посмотреть рефералов🙋‍', callback_data = 'admintwo')) # СОЗДАЁМ КНОПКУ И КАЛБЭК К НЕЙ
-proch.add(InlineKeyboardButton(f'Другое📚', callback_data = 'admintree')) # СОЗДАЁМ КНОПКУ И КАЛБЭК К НЕЙ
-proch.add(InlineKeyboardButton(f'Назад🔙', callback_data = 'canc')) # СОЗДАЁМ КНОПКУ И КАЛБЭК К НЕЙ
+
 
 
 
