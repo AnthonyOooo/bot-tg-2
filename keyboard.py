@@ -14,6 +14,10 @@ pay = types.ReplyKeyboardMarkup(resize_keyboard=True)
 done = types.ReplyKeyboardMarkup(resize_keyboard=True)
 ref = types.ReplyKeyboardMarkup(resize_keyboard=True)
 other = types.ReplyKeyboardMarkup(resize_keyboard=True)
+pakets = types.ReplyKeyboardMarkup(resize_keyboard=True)
+prt = types.ReplyKeyboardMarkup(resize_keyboard=True)
+bots = types.ReplyKeyboardMarkup(resize_keyboard=True)
+
 
 
  # СОЗДАЕМ ВООБЩЕ ОСНОВУ ДЛЯ КНОПОК
@@ -31,6 +35,17 @@ chatonline = types.KeyboardButton("Ꭹᴄᴛᴀнᴏʙиᴛь ᴄᴏᴇдинᴇ
 dryg = types.KeyboardButton("Пᴏᴧучиᴛь ᴄᴄыᴧᴋу💵")
 vash = types.KeyboardButton("Пᴏᴄʍᴏᴛᴩᴇᴛь ᴩᴇɸᴇᴩᴀᴧᴏʙ🙋‍")
 ask = types.KeyboardButton("Назад🔹")
+one = types.KeyboardButton("Пакет 1 🛍")
+two = types.KeyboardButton("Пакет 2 🛍")
+tree = types.KeyboardButton("Пакет 3 🛍")
+fo = types.KeyboardButton("Пакет 4 🛍")
+five = types.KeyboardButton("Пакет 5 🛍")
+six =  types.KeyboardButton("Пакет 6 🛍")
+pars = types.KeyboardButton("Все пакеты 🛍")
+bot = types.KeyboardButton("Зᴀбᴇᴩи ᴄʙᴏᴇᴦᴏ бᴏᴛᴀ🤖")
+bibo = types.KeyboardButton("Зᴀᴋᴀɜᴀᴛь бᴏᴛᴀ дᴧя биɜнᴇᴄᴀ 🏭")
+
+
 
 
 
@@ -60,6 +75,14 @@ ref.add(ask)
 other.add(chatonline)
 other.add(dryg, vash)
 other.add(ask)
+pakets.add(one, two, tree)
+pakets.add(fo, five, six)
+pakets.add(ask)
+prt.add(pars)
+prt.add(ask)
+bots.add(bot)
+bots.add(bibo)
+bots.add(ask)
 
 
 
@@ -74,8 +97,9 @@ stats.add(InlineKeyboardButton(f'Назад 🔙', callback_data = 'canc')) # С
 
 
 payment = InlineKeyboardMarkup()    # СОЗДАЁМ ОСНОВУ ДЛЯ ИНЛАЙН КНОПКИ
-payment.add(InlineKeyboardButton(f'Ꭷiwi🥝', callback_data = 'Jove')) # СОЗДАЁМ КНОПКУ И КАЛБЭК К НЕЙ
-payment.add(InlineKeyboardButton(f'Ꮯбᴇᴩбᴀнᴋ🏦', callback_data = 'canceel')) # СОЗДАЁМ КНОПКУ И КАЛБЭК К НЕЙ
+payment.add(InlineKeyboardButton(f'Аʙиᴛᴏ 🛒', callback_data = 'Jove')) # СОЗДАЁМ КНОПКУ И КАЛБЭК К НЕЙ
+payment.add(InlineKeyboardButton(f'Пᴀᴩᴄинᴦ 📄', callback_data = 'vroom')) # СОЗДАЁМ КНОПКУ И КАЛБЭК К НЕЙ
+payment.add(InlineKeyboardButton(f'Телеграм боты 🤖', callback_data = 'hou')) # СОЗДАЁМ КНОПКУ И КАЛБЭК К НЕЙ
 payment.add(InlineKeyboardButton(f'Назад 🔙', callback_data = 'canc')) # СОЗДАЁМ КНОПКУ И КАЛБЭК К НЕЙ
 
 
